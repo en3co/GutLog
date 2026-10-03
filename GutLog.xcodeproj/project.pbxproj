@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A100000000000001 /* GutLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000001 /* GutLogApp.swift */; };
+		A100000000000002 /* SymptomKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000002 /* SymptomKind.swift */; };
+		A100000000000003 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000003 /* Meal.swift */; };
+		A100000000000004 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000004 /* Symptom.swift */; };
+		A100000000000005 /* Stool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000005 /* Stool.swift */; };
+		A100000000000006 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000006 /* TimelineItem.swift */; };
+		A100000000000007 /* HealthKitWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000007 /* HealthKitWriter.swift */; };
+		A100000000000008 /* CSVExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000008 /* CSVExporter.swift */; };
+		A100000000000009 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000009 /* Haptics.swift */; };
+		A10000000000000A /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000A /* TodayView.swift */; };
+		A10000000000000B /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000B /* AddMealView.swift */; };
+		A10000000000000C /* AddSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000C /* AddSymptomView.swift */; };
+		A10000000000000D /* AddStoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000D /* AddStoolView.swift */; };
+		A10000000000000E /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000E /* EntryDetailView.swift */; };
+		A10000000000000F /* PatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000F /* PatternsView.swift */; };
+		A100000000000010 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000010 /* ExportView.swift */; };
+		A100000000000011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000011 /* Assets.xcassets */; };
+		A100000000000012 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000012 /* PrivacyInfo.xcprivacy */; };
+		A100000000000013 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B100000000000013 /* HealthKit.framework */; };
+		A100000000000014 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000016 /* AppIcon.icon */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B100000000000001 /* GutLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutLogApp.swift; sourceTree = "<group>"; };
+		B100000000000002 /* SymptomKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomKind.swift; sourceTree = "<group>"; };
+		B100000000000003 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		B100000000000004 /* Symptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
+		B100000000000005 /* Stool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stool.swift; sourceTree = "<group>"; };
+		B100000000000006 /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
+		B100000000000007 /* HealthKitWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitWriter.swift; sourceTree = "<group>"; };
+		B100000000000008 /* CSVExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExporter.swift; sourceTree = "<group>"; };
+		B100000000000009 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		B10000000000000A /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		B10000000000000B /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
+		B10000000000000C /* AddSymptomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSymptomView.swift; sourceTree = "<group>"; };
+		B10000000000000D /* AddStoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoolView.swift; sourceTree = "<group>"; };
+		B10000000000000E /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
+		B10000000000000F /* PatternsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsView.swift; sourceTree = "<group>"; };
+		B100000000000010 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		B100000000000011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B100000000000012 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		B100000000000013 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B100000000000014 /* GutLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GutLog.entitlements; sourceTree = "<group>"; };
+		B100000000000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B100000000000016 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		C100000000000001 /* GutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D100000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000000000013 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E100000000000001 = {
+			isa = PBXGroup;
+			children = (
+				E100000000000002 /* GutLog */,
+				E100000000000003 /* Products */,
+				E100000000000004 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E100000000000002 /* GutLog */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000001 /* GutLogApp.swift */,
+				B100000000000014 /* GutLog.entitlements */,
+				B100000000000015 /* Info.plist */,
+				B100000000000012 /* PrivacyInfo.xcprivacy */,
+				B100000000000011 /* Assets.xcassets */,
+				B100000000000016 /* AppIcon.icon */,
+				E100000000000005 /* Models */,
+				E100000000000006 /* Health */,
+				E100000000000007 /* Export */,
+				E100000000000008 /* Views */,
+			);
+			path = GutLog;
+			sourceTree = "<group>";
+		};
+		E100000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C100000000000001 /* GutLog.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E100000000000004 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000013 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E100000000000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000002 /* SymptomKind.swift */,
+				B100000000000003 /* Meal.swift */,
+				B100000000000004 /* Symptom.swift */,
+				B100000000000005 /* Stool.swift */,
+				B100000000000006 /* TimelineItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E100000000000006 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000007 /* HealthKitWriter.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		E100000000000007 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000008 /* CSVExporter.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		E100000000000008 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000009 /* Haptics.swift */,
+				B10000000000000A /* TodayView.swift */,
+				B10000000000000B /* AddMealView.swift */,
+				B10000000000000C /* AddSymptomView.swift */,
+				B10000000000000D /* AddStoolView.swift */,
+				B10000000000000E /* EntryDetailView.swift */,
+				B10000000000000F /* PatternsView.swift */,
+				B100000000000010 /* ExportView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F100000000000001 /* GutLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F100000000000010 /* Build configuration list for PBXNativeTarget "GutLog" */;
+			buildPhases = (
+				F100000000000002 /* Sources */,
+				D100000000000001 /* Frameworks */,
+				F100000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GutLog;
+			productName = GutLog;
+			productReference = C100000000000001 /* GutLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F100000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					F100000000000001 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = F100000000000020 /* Build configuration list for PBXProject "GutLog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E100000000000001;
+			productRefGroup = E100000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F100000000000001 /* GutLog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F100000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000000000011 /* Assets.xcassets in Resources */,
+				A100000000000014 /* AppIcon.icon in Resources */,
+				A100000000000012 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F100000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000000000001 /* GutLogApp.swift in Sources */,
+				A100000000000002 /* SymptomKind.swift in Sources */,
+				A100000000000003 /* Meal.swift in Sources */,
+				A100000000000004 /* Symptom.swift in Sources */,
+				A100000000000005 /* Stool.swift in Sources */,
+				A100000000000006 /* TimelineItem.swift in Sources */,
+				A100000000000007 /* HealthKitWriter.swift in Sources */,
+				A100000000000008 /* CSVExporter.swift in Sources */,
+				A100000000000009 /* Haptics.swift in Sources */,
+				A10000000000000A /* TodayView.swift in Sources */,
+				A10000000000000B /* AddMealView.swift in Sources */,
+				A10000000000000C /* AddSymptomView.swift in Sources */,
+				A10000000000000D /* AddStoolView.swift in Sources */,
+				A10000000000000E /* EntryDetailView.swift in Sources */,
+				A10000000000000F /* PatternsView.swift in Sources */,
+				A100000000000010 /* ExportView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F200000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F200000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F200000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = GutLog/GutLog.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GutLog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gut Log";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Gut Log writes meals and selected symptoms you log into Apple Health on this iPhone. Nothing leaves the device.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enricoarapi.gutlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F200000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = GutLog/GutLog.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GutLog/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gut Log";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Gut Log writes meals and selected symptoms you log into Apple Health on this iPhone. Nothing leaves the device.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enricoarapi.gutlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F100000000000010 /* Build configuration list for PBXNativeTarget "GutLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F200000000000003 /* Debug */,
+				F200000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F100000000000020 /* Build configuration list for PBXProject "GutLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F200000000000001 /* Debug */,
+				F200000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F100000000000000 /* Project object */;
+}
