@@ -8,13 +8,14 @@ struct AddStoolView: View {
 
     var day: Date
     var existing: Stool?
+    var embedded = false
 
     @State private var bristol: BristolType = .type4
     @State private var notes = ""
     @State private var timestamp = Date()
 
     var body: some View {
-        NavigationStack {
+        container {
             Form {
                 Section("Bristol type") {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 4), spacing: 8) {
@@ -68,6 +69,15 @@ struct AddStoolView: View {
                     timestamp = defaultTime(on: day)
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    private func container<V: View>(@ViewBuilder content: () -> V) -> some View {
+        if embedded {
+            content()
+        } else {
+            NavigationStack { content() }
         }
     }
 

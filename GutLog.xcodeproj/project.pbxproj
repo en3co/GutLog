@@ -21,7 +21,6 @@
 		A10000000000000C /* AddSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000C /* AddSymptomView.swift */; };
 		A10000000000000D /* AddStoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000D /* AddStoolView.swift */; };
 		A10000000000000E /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000E /* EntryDetailView.swift */; };
-		A10000000000000F /* PatternsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000F /* PatternsView.swift */; };
 		A100000000000010 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000010 /* ExportView.swift */; };
 		A100000000000011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000011 /* Assets.xcassets */; };
 		A100000000000012 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000012 /* PrivacyInfo.xcprivacy */; };
@@ -44,7 +43,6 @@
 		B10000000000000C /* AddSymptomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSymptomView.swift; sourceTree = "<group>"; };
 		B10000000000000D /* AddStoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoolView.swift; sourceTree = "<group>"; };
 		B10000000000000E /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
-		B10000000000000F /* PatternsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternsView.swift; sourceTree = "<group>"; };
 		B100000000000010 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		B100000000000011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B100000000000012 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				B10000000000000C /* AddSymptomView.swift */,
 				B10000000000000D /* AddStoolView.swift */,
 				B10000000000000E /* EntryDetailView.swift */,
-				B10000000000000F /* PatternsView.swift */,
 				B100000000000010 /* ExportView.swift */,
 			);
 			path = Views;
@@ -237,7 +234,6 @@
 				A10000000000000C /* AddSymptomView.swift in Sources */,
 				A10000000000000D /* AddStoolView.swift in Sources */,
 				A10000000000000E /* EntryDetailView.swift in Sources */,
-				A10000000000000F /* PatternsView.swift in Sources */,
 				A100000000000010 /* ExportView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +341,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = GutLog/GutLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutLog/Info.plist;
@@ -380,7 +376,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = GutLog/GutLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutLog/Info.plist;

@@ -8,6 +8,7 @@ struct AddSymptomView: View {
 
     var day: Date
     var existing: Symptom?
+    var embedded = false
 
     @State private var selected: Set<SymptomKind> = []
     @State private var severity: Double = 5
@@ -15,7 +16,7 @@ struct AddSymptomView: View {
     @State private var timestamp = Date()
 
     var body: some View {
-        NavigationStack {
+        container {
             Form {
                 Section("Type") {
                     ForEach(SymptomKind.allCases) { kind in
@@ -76,6 +77,15 @@ struct AddSymptomView: View {
                     timestamp = defaultTime(on: day)
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    private func container<V: View>(@ViewBuilder content: () -> V) -> some View {
+        if embedded {
+            content()
+        } else {
+            NavigationStack { content() }
         }
     }
 

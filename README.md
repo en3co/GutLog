@@ -2,7 +2,7 @@
 
 A personal iOS diary for meals, gut symptoms, and stools. It runs entirely on the device. There is no account and no network backend.
 
-Log an entry in a few taps, then look at which meals were recorded in the 4 hours before a symptom and which were recorded 4 to 24 hours before it. The Patterns screen is a list of those meals. It does not score or diagnose anything.
+Log an entry in a few taps. The app has two screens: Today and Export. Today is the diary for one day. The arrows move to the previous or next day, and tapping the Today tab while you are already on it returns to the current day. Editing an entry opens as its own sheet, with Cancel and Save. It does not score or diagnose anything.
 
 Optional nutrition fields and three symptom types can be written to Apple Health on this iPhone. Gut Log does not read other Health data.
 

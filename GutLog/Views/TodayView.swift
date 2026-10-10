@@ -2,6 +2,8 @@ import SwiftUI
 import SwiftData
 
 struct TodayView: View {
+    var todayReset: Int = 0
+
     @Environment(\.modelContext) private var context
     @Query(sort: \Meal.timestamp, order: .reverse) private var meals: [Meal]
     @Query(sort: \Symptom.timestamp, order: .reverse) private var symptoms: [Symptom]
@@ -73,8 +75,12 @@ struct TodayView: View {
                     .disabled(calendar.isDateInToday(day) || day > Date())
                 }
             }
-            .navigationDestination(item: $selectedItem) { item in
+            .sheet(item: $selectedItem) { item in
                 EntryDetailView(item: item)
+            }
+            .onChange(of: todayReset) {
+                day = .now
+                selectedItem = nil
             }
             .sheet(item: $sheet) { sheet in
                 switch sheet {

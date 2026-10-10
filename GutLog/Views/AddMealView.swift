@@ -10,6 +10,7 @@ struct AddMealView: View {
 
     var day: Date
     var existing: Meal?
+    var embedded = false
 
     @State private var name = ""
     @State private var notes = ""
@@ -41,7 +42,7 @@ struct AddMealView: View {
     }
 
     var body: some View {
-        NavigationStack {
+        container {
             Form {
                 Section("Meal") {
                     TextField("What did you eat?", text: $name)
@@ -111,6 +112,15 @@ struct AddMealView: View {
                     nameFocused = true
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    private func container<V: View>(@ViewBuilder content: () -> V) -> some View {
+        if embedded {
+            content()
+        } else {
+            NavigationStack { content() }
         }
     }
 

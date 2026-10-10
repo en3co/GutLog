@@ -8,31 +8,33 @@ struct EntryDetailView: View {
     @State private var confirmDelete = false
 
     var body: some View {
-        Group {
-            switch item {
-            case .meal(let meal):
-                AddMealView(day: meal.timestamp, existing: meal)
-            case .symptom(let symptom):
-                AddSymptomView(day: symptom.timestamp, existing: symptom)
-            case .stool(let stool):
-                AddStoolView(day: stool.timestamp, existing: stool)
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                Button(role: .destructive) {
-                    confirmDelete = true
-                } label: {
-                    Label("Delete", systemImage: "trash")
-                        .frame(minHeight: 44)
+        NavigationStack {
+            Group {
+                switch item {
+                case .meal(let meal):
+                    AddMealView(day: meal.timestamp, existing: meal, embedded: true)
+                case .symptom(let symptom):
+                    AddSymptomView(day: symptom.timestamp, existing: symptom, embedded: true)
+                case .stool(let stool):
+                    AddStoolView(day: stool.timestamp, existing: stool, embedded: true)
                 }
             }
-        }
-        .confirmationDialog("Delete this entry?", isPresented: $confirmDelete, titleVisibility: .visible) {
-            Button("Delete", role: .destructive) {
-                delete()
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button(role: .destructive) {
+                        confirmDelete = true
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                            .frame(minHeight: 44)
+                    }
+                }
             }
-            Button("Cancel", role: .cancel) {}
+            .confirmationDialog("Delete this entry?", isPresented: $confirmDelete, titleVisibility: .visible) {
+                Button("Delete", role: .destructive) {
+                    delete()
+                }
+                Button("Cancel", role: .cancel) {}
+            }
         }
     }
 
