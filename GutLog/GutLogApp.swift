@@ -4,11 +4,15 @@ import UIKit
 
 @main
 struct GutLogApp: App {
+    init() {
+        WatchSync.shared.start()
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()
         }
-        .modelContainer(for: [Meal.self, Symptom.self, Stool.self])
+        .modelContainer(GutLogStore.shared)
     }
 }
 

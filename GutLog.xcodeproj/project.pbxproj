@@ -26,6 +26,22 @@
 		A100000000000012 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000012 /* PrivacyInfo.xcprivacy */; };
 		A100000000000013 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B100000000000013 /* HealthKit.framework */; };
 		A100000000000014 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000016 /* AppIcon.icon */; };
+		A100000000000015 /* GutLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000017 /* GutLogStore.swift */; };
+		A100000000000016 /* WatchSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000018 /* WatchSync.swift */; };
+		W200000000000001 /* GutLogWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = W110000000000001 /* GutLogWatchApp.swift */; };
+		W200000000000002 /* WatchTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = W110000000000002 /* WatchTodayView.swift */; };
+		W200000000000003 /* WatchAddSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = W110000000000003 /* WatchAddSymptomView.swift */; };
+		W200000000000004 /* WatchAddStoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = W110000000000004 /* WatchAddStoolView.swift */; };
+		W200000000000005 /* WatchAddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = W110000000000005 /* WatchAddMealView.swift */; };
+		W200000000000006 /* SymptomKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000002 /* SymptomKind.swift */; };
+		W200000000000007 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000003 /* Meal.swift */; };
+		W200000000000008 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000004 /* Symptom.swift */; };
+		W200000000000009 /* Stool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000005 /* Stool.swift */; };
+		W20000000000000A /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000006 /* TimelineItem.swift */; };
+		W20000000000000B /* GutLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000017 /* GutLogStore.swift */; };
+		W20000000000000D /* WatchSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000000000018 /* WatchSync.swift */; };
+		W20000000000000C /* GutLogWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = W100000000000002 /* GutLogWatch.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		W20000000000000E /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = B100000000000016 /* AppIcon.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +67,16 @@
 		B100000000000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B100000000000016 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		C100000000000001 /* GutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B100000000000017 /* GutLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutLogStore.swift; sourceTree = "<group>"; };
+		B100000000000018 /* WatchSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSync.swift; sourceTree = "<group>"; };
+		W110000000000001 /* GutLogWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutLogWatchApp.swift; sourceTree = "<group>"; };
+		W110000000000002 /* WatchTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTodayView.swift; sourceTree = "<group>"; };
+		W110000000000003 /* WatchAddSymptomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAddSymptomView.swift; sourceTree = "<group>"; };
+		W110000000000004 /* WatchAddStoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAddStoolView.swift; sourceTree = "<group>"; };
+		W110000000000005 /* WatchAddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAddMealView.swift; sourceTree = "<group>"; };
+		W110000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		W110000000000007 /* GutLogWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GutLogWatch.entitlements; sourceTree = "<group>"; };
+		W100000000000002 /* GutLogWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GutLogWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +88,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		W100000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		W100000000000031 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F100000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = W100000000000001;
+			remoteInfo = GutLogWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		W100000000000020 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				W20000000000000C /* GutLogWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXGroup section */
 		E100000000000001 = {
 			isa = PBXGroup;
 			children = (
 				E100000000000002 /* GutLog */,
+				E100000000000009 /* GutLogWatch */,
 				E100000000000003 /* Products */,
 				E100000000000004 /* Frameworks */,
 			);
@@ -85,6 +143,7 @@
 				B100000000000016 /* AppIcon.icon */,
 				E100000000000005 /* Models */,
 				E100000000000006 /* Health */,
+				E10000000000000A /* Sync */,
 				E100000000000007 /* Export */,
 				E100000000000008 /* Views */,
 			);
@@ -95,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				C100000000000001 /* GutLog.app */,
+				W100000000000002 /* GutLogWatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +170,7 @@
 		E100000000000005 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B100000000000017 /* GutLogStore.swift */,
 				B100000000000002 /* SymptomKind.swift */,
 				B100000000000003 /* Meal.swift */,
 				B100000000000004 /* Symptom.swift */,
@@ -125,6 +186,14 @@
 				B100000000000007 /* HealthKitWriter.swift */,
 			);
 			path = Health;
+			sourceTree = "<group>";
+		};
+		E10000000000000A /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				B100000000000018 /* WatchSync.swift */,
+			);
+			path = Sync;
 			sourceTree = "<group>";
 		};
 		E100000000000007 /* Export */ = {
@@ -149,6 +218,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E100000000000009 /* GutLogWatch */ = {
+			isa = PBXGroup;
+			children = (
+				W110000000000001 /* GutLogWatchApp.swift */,
+				W110000000000002 /* WatchTodayView.swift */,
+				W110000000000003 /* WatchAddSymptomView.swift */,
+				W110000000000004 /* WatchAddStoolView.swift */,
+				W110000000000005 /* WatchAddMealView.swift */,
+				W110000000000006 /* Info.plist */,
+				W110000000000007 /* GutLogWatch.entitlements */,
+			);
+			path = GutLogWatch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,14 +242,33 @@
 				F100000000000002 /* Sources */,
 				D100000000000001 /* Frameworks */,
 				F100000000000003 /* Resources */,
+				W100000000000020 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				W100000000000030 /* PBXTargetDependency */,
+			);
+			name = GutLog;
+			productName = GutLog;
+			productReference = C100000000000001 /* GutLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		W100000000000001 /* GutLogWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = W100000000000010 /* Build configuration list for PBXNativeTarget "GutLogWatch" */;
+			buildPhases = (
+				W100000000000003 /* Sources */,
+				W100000000000004 /* Frameworks */,
+				W100000000000005 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = GutLog;
-			productName = GutLog;
-			productReference = C100000000000001 /* GutLog.app */;
+			name = GutLogWatch;
+			productName = GutLogWatch;
+			productReference = W100000000000002 /* GutLogWatch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,6 +282,9 @@
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					F100000000000001 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					W100000000000001 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -198,6 +303,7 @@
 			projectRoot = "";
 			targets = (
 				F100000000000001 /* GutLog */,
+				W100000000000001 /* GutLogWatch */,
 			);
 		};
 /* End PBXProject section */
@@ -210,6 +316,14 @@
 				A100000000000011 /* Assets.xcassets in Resources */,
 				A100000000000014 /* AppIcon.icon in Resources */,
 				A100000000000012 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		W100000000000005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				W20000000000000E /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,10 +349,39 @@
 				A10000000000000D /* AddStoolView.swift in Sources */,
 				A10000000000000E /* EntryDetailView.swift in Sources */,
 				A100000000000010 /* ExportView.swift in Sources */,
+				A100000000000015 /* GutLogStore.swift in Sources */,
+				A100000000000016 /* WatchSync.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		W100000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				W200000000000001 /* GutLogWatchApp.swift in Sources */,
+				W200000000000002 /* WatchTodayView.swift in Sources */,
+				W200000000000003 /* WatchAddSymptomView.swift in Sources */,
+				W200000000000004 /* WatchAddStoolView.swift in Sources */,
+				W200000000000005 /* WatchAddMealView.swift in Sources */,
+				W200000000000006 /* SymptomKind.swift in Sources */,
+				W200000000000007 /* Meal.swift in Sources */,
+				W200000000000008 /* Symptom.swift in Sources */,
+				W200000000000009 /* Stool.swift in Sources */,
+				W20000000000000A /* TimelineItem.swift in Sources */,
+				W20000000000000B /* GutLogStore.swift in Sources */,
+				W20000000000000D /* WatchSync.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		W100000000000030 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = W100000000000001 /* GutLogWatch */;
+			targetProxy = W100000000000031 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F200000000000001 /* Debug */ = {
@@ -342,6 +485,7 @@
 				CODE_SIGN_ENTITLEMENTS = GutLog/GutLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 8PANS5K4HT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutLog/Info.plist;
@@ -377,6 +521,7 @@
 				CODE_SIGN_ENTITLEMENTS = GutLog/GutLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 8PANS5K4HT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutLog/Info.plist;
@@ -403,6 +548,76 @@
 			};
 			name = Release;
 		};
+		W200000000000101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ARCHS[sdk=watchos*]" = "arm64 arm64_32";
+				CODE_SIGN_ENTITLEMENTS = GutLogWatch/GutLogWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 8PANS5K4HT;
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_PREVIEWS = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GutLogWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gut Log";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enricoarapi.gutlog.watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		W200000000000102 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ARCHS[sdk=watchos*]" = "arm64 arm64_32";
+				CODE_SIGN_ENTITLEMENTS = GutLogWatch/GutLogWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 8PANS5K4HT;
+				ENABLE_DEBUG_DYLIB = NO;
+				ENABLE_PREVIEWS = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GutLogWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gut Log";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enricoarapi.gutlog.watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,6 +626,15 @@
 			buildConfigurations = (
 				F200000000000003 /* Debug */,
 				F200000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		W100000000000010 /* Build configuration list for PBXNativeTarget "GutLogWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				W200000000000101 /* Debug */,
+				W200000000000102 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

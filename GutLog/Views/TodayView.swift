@@ -82,6 +82,9 @@ struct TodayView: View {
                 day = .now
                 selectedItem = nil
             }
+            .task {
+                await mirrorWatchEntriesToHealth()
+            }
             .sheet(item: $sheet) { sheet in
                 switch sheet {
                 case .meal:
@@ -160,6 +163,17 @@ struct TodayView: View {
                 button.buttonStyle(.bordered)
             }
         }
+    }
+
+    /// Entries created on Apple Watch have no Health sample yet. Write those once the phone has the row.
+    private func mirrorWatchEntriesToHealth() async {
+        for symptom in symptoms where symptom.hkSampleUUID == nil && symptom.kind.healthKitCategoryIdentifier != nil {
+            await HealthKitWriter.shared.syncSymptom(symptom)
+        }
+        for meal in meals where meal.hasNutritionForHealth && meal.hkEnergyUUID == nil && meal.hkProteinUUID == nil && meal.hkCarbsUUID == nil && meal.hkFatUUID == nil && meal.hkFibreUUID == nil && meal.hkWaterUUID == nil {
+            await HealthKitWriter.shared.syncMeal(meal)
+        }
+        try? context.save()
     }
 
     private func delete(_ item: TimelineItem) {
