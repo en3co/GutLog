@@ -19,6 +19,9 @@ struct WatchTodayView: View {
 
     private var calendar: Calendar { .current }
 
+    /// Same sRGB green as GutLog/Assets.xcassets/AccentColor.
+    private static let accent = Color(red: 0.220, green: 0.520, blue: 0.420)
+
     private var items: [TimelineItem] {
         let mealsToday = meals.filter { calendar.isDate($0.timestamp, inSameDayAs: day) }.map(TimelineItem.meal)
         let symptomsToday = symptoms.filter { calendar.isDate($0.timestamp, inSameDayAs: day) }.map(TimelineItem.symptom)
@@ -30,14 +33,14 @@ struct WatchTodayView: View {
         NavigationStack(path: $path) {
             List {
                 Section {
+                    NavigationLink(value: WatchRoute.meal) {
+                        Label("Meal", systemImage: "fork.knife")
+                    }
                     NavigationLink(value: WatchRoute.symptom) {
-                        Label("Symptom", systemImage: "waveform.path.ecg")
+                        Label("Symptom", systemImage: "exclamationmark.circle")
                     }
                     NavigationLink(value: WatchRoute.stool) {
                         Label("Stool", systemImage: "drop")
-                    }
-                    NavigationLink(value: WatchRoute.meal) {
-                        Label("Meal", systemImage: "fork.knife")
                     }
                 }
 
@@ -59,7 +62,7 @@ struct WatchTodayView: View {
                     }
                 }
             }
-            .navigationTitle("Gut Log")
+            .navigationTitle(Text("Gut Log").foregroundStyle(Self.accent))
             .navigationDestination(for: WatchRoute.self) { route in
                 switch route {
                 case .symptom:
