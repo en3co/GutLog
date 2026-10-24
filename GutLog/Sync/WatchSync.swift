@@ -18,6 +18,12 @@ struct SyncedMeal: Codable, Identifiable {
     var notes: String
     var portionNote: String
     var isRepeat: Bool
+    var kcal: Double?
+    var proteinG: Double?
+    var carbsG: Double?
+    var fatG: Double?
+    var fibreG: Double?
+    var waterML: Double?
 }
 
 struct SyncedSymptom: Codable, Identifiable {
@@ -153,10 +159,13 @@ final class WatchSync: NSObject, WCSessionDelegate {
     }
 
     private func apply(_ library: WatchLibrary, in context: ModelContext) {
-        for meal in library.meals { upsert(meal, in: context) }
-        for symptom in library.symptoms { upsert(symptom, in: context) }
-        for stool in library.stools { upsert(stool, in: context) }
-        for id in library.deleted { delete(id, in: context) }
+        for meal in library.meals { upsert(meal, in: context, updateExisting: true) }
+        for symptom in library.symptoms { upsert(symptom, in: context, updateExisting: true) }
+        for stool in library.stools { upsert(stool, in: context, updateExisting: true) }
+        let present = Set(library.meals.map(\.id) + library.symptoms.map(\.id) + library.stools.map(\.id))
+        for id in library.deleted where !present.contains(id) {
+            delete(id, in: context)
+        }
         try? context.save()
     }
 
@@ -173,15 +182,16 @@ final class WatchSync: NSObject, WCSessionDelegate {
         let previous = Set(UserDefaults.standard.stringArray(forKey: publishedKey)?.compactMap(UUID.init) ?? [])
         var deleted = Set(UserDefaults.standard.stringArray(forKey: deletedKey)?.compactMap(UUID.init) ?? [])
         deleted.formUnion(previous.subtracting(current))
-        let trimmed = Array(deleted.prefix(100))
-        UserDefaults.standard.set(trimmed.map(\.uuidString), forKey: deletedKey)
+        deleted.subtract(current)
+        let tombstones = Array(deleted)
+        UserDefaults.standard.set(tombstones.map(\.uuidString), forKey: deletedKey)
         UserDefaults.standard.set(current.map(\.uuidString), forKey: publishedKey)
 
         let library = WatchLibrary(
             meals: meals.filter { $0.timestamp >= cutoff }.map(SyncedMeal.init),
             symptoms: symptoms.filter { $0.timestamp >= cutoff }.map(SyncedSymptom.init),
             stools: stools.filter { $0.timestamp >= cutoff }.map(SyncedStool.init),
-            deleted: trimmed
+            deleted: tombstones
         )
         guard let data = try? encoder.encode(library) else { return }
         try? WCSession.default.updateApplicationContext(["library": data])
@@ -192,24 +202,53 @@ final class WatchSync: NSObject, WCSessionDelegate {
 
     private func rememberDeleted(_ id: UUID) {
         var deleted = UserDefaults.standard.stringArray(forKey: deletedKey) ?? []
-        deleted.append(id.uuidString)
-        UserDefaults.standard.set(Array(deleted.suffix(100)), forKey: deletedKey)
+        if !deleted.contains(id.uuidString) {
+            deleted.append(id.uuidString)
+        }
+        UserDefaults.standard.set(deleted, forKey: deletedKey)
     }
 
-    private func upsert(_ meal: SyncedMeal, in context: ModelContext) {
-        if existingMeal(meal.id, in: context) != nil { return }
+    private func upsert(_ meal: SyncedMeal, in context: ModelContext, updateExisting: Bool = false) {
+        if let existing = existingMeal(meal.id, in: context) {
+            guard updateExisting else { return }
+            existing.timestamp = meal.timestamp
+            existing.name = meal.name
+            existing.notes = meal.notes
+            existing.portionNote = meal.portionNote
+            existing.isRepeat = meal.isRepeat
+            existing.kcal = meal.kcal
+            existing.proteinG = meal.proteinG
+            existing.carbsG = meal.carbsG
+            existing.fatG = meal.fatG
+            existing.fibreG = meal.fibreG
+            existing.waterML = meal.waterML
+            return
+        }
         context.insert(Meal(
             id: meal.id,
             timestamp: meal.timestamp,
             name: meal.name,
             notes: meal.notes,
             portionNote: meal.portionNote,
+            kcal: meal.kcal,
+            proteinG: meal.proteinG,
+            carbsG: meal.carbsG,
+            fatG: meal.fatG,
+            fibreG: meal.fibreG,
+            waterML: meal.waterML,
             isRepeat: meal.isRepeat
         ))
     }
 
-    private func upsert(_ symptom: SyncedSymptom, in context: ModelContext) {
-        if existingSymptom(symptom.id, in: context) != nil { return }
+    private func upsert(_ symptom: SyncedSymptom, in context: ModelContext, updateExisting: Bool = false) {
+        if let existing = existingSymptom(symptom.id, in: context) {
+            guard updateExisting else { return }
+            existing.timestamp = symptom.timestamp
+            existing.kindRaw = symptom.kindRaw
+            existing.severity = min(10, max(0, symptom.severity))
+            existing.notes = symptom.notes
+            return
+        }
         let kind = SymptomKind(rawValue: symptom.kindRaw) ?? .other
         let model = Symptom(
             id: symptom.id,
@@ -224,8 +263,14 @@ final class WatchSync: NSObject, WCSessionDelegate {
         #endif
     }
 
-    private func upsert(_ stool: SyncedStool, in context: ModelContext) {
-        if existingStool(stool.id, in: context) != nil { return }
+    private func upsert(_ stool: SyncedStool, in context: ModelContext, updateExisting: Bool = false) {
+        if let existing = existingStool(stool.id, in: context) {
+            guard updateExisting else { return }
+            existing.timestamp = stool.timestamp
+            existing.bristol = min(7, max(1, stool.bristol))
+            existing.notes = stool.notes
+            return
+        }
         context.insert(Stool(
             id: stool.id,
             timestamp: stool.timestamp,
@@ -287,6 +332,12 @@ extension SyncedMeal {
         notes = meal.notes
         portionNote = meal.portionNote
         isRepeat = meal.isRepeat
+        kcal = meal.kcal
+        proteinG = meal.proteinG
+        carbsG = meal.carbsG
+        fatG = meal.fatG
+        fibreG = meal.fibreG
+        waterML = meal.waterML
     }
 }
 

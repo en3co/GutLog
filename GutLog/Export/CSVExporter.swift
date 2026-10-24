@@ -166,9 +166,14 @@ enum CSVExporter {
     }
 
     private static func escape(_ field: String) -> String {
-        if field.contains(",") || field.contains("\"") || field.contains("\n") {
-            return "\"" + field.replacingOccurrences(of: "\"", with: "\"\"") + "\""
+        var value = field
+        let trimmed = value.drop(while: { $0 == " " || $0 == "\t" })
+        if let first = trimmed.first, "=+-@".contains(first) {
+            value = "'" + value
         }
-        return field
+        if value.contains(",") || value.contains("\"") || value.contains("\n") || value != field {
+            return "\"" + value.replacingOccurrences(of: "\"", with: "\"\"") + "\""
+        }
+        return value
     }
 }

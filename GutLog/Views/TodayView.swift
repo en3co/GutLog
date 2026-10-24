@@ -264,6 +264,7 @@ enum AddSheet: String, Identifiable {
 }
 
 private struct MealSnapshot {
+    let id: UUID
     let timestamp: Date
     let name: String
     let notes: String
@@ -277,6 +278,7 @@ private struct MealSnapshot {
     let isRepeat: Bool
 
     init(_ m: Meal) {
+        id = m.id
         timestamp = m.timestamp
         name = m.name
         notes = m.notes
@@ -292,6 +294,7 @@ private struct MealSnapshot {
 
     func insert(into context: ModelContext) {
         let meal = Meal(
+            id: id,
             timestamp: timestamp,
             name: name,
             notes: notes,
@@ -313,12 +316,14 @@ private struct MealSnapshot {
 }
 
 private struct SymptomSnapshot {
+    let id: UUID
     let timestamp: Date
     let kind: SymptomKind
     let severity: Int
     let notes: String
 
     init(_ s: Symptom) {
+        id = s.id
         timestamp = s.timestamp
         kind = s.kind
         severity = s.severity
@@ -326,7 +331,7 @@ private struct SymptomSnapshot {
     }
 
     func insert(into context: ModelContext) {
-        let s = Symptom(timestamp: timestamp, kind: kind, severity: severity, notes: notes)
+        let s = Symptom(id: id, timestamp: timestamp, kind: kind, severity: severity, notes: notes)
         context.insert(s)
         try? context.save()
         Task { @MainActor in
@@ -336,18 +341,20 @@ private struct SymptomSnapshot {
 }
 
 private struct StoolSnapshot {
+    let id: UUID
     let timestamp: Date
     let bristol: Int
     let notes: String
 
     init(_ s: Stool) {
+        id = s.id
         timestamp = s.timestamp
         bristol = s.bristol
         notes = s.notes
     }
 
     func insert(into context: ModelContext) {
-        let s = Stool(timestamp: timestamp, bristol: bristol, notes: notes)
+        let s = Stool(id: id, timestamp: timestamp, bristol: bristol, notes: notes)
         context.insert(s)
         try? context.save()
     }
