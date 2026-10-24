@@ -33,15 +33,9 @@ struct WatchTodayView: View {
         NavigationStack(path: $path) {
             List {
                 Section {
-                    NavigationLink(value: WatchRoute.meal) {
-                        Label("Meal", systemImage: "fork.knife")
-                    }
-                    NavigationLink(value: WatchRoute.symptom) {
-                        Label("Symptom", systemImage: "exclamationmark.circle")
-                    }
-                    NavigationLink(value: WatchRoute.stool) {
-                        Label("Stool", systemImage: "drop")
-                    }
+                    addLink("Meal", systemImage: "fork.knife", route: .meal)
+                    addLink("Symptom", systemImage: "exclamationmark.circle", route: .symptom)
+                    addLink("Stool", systemImage: "drop", route: .stool)
                 }
 
                 Section(dayTitle) {
@@ -62,7 +56,7 @@ struct WatchTodayView: View {
                     }
                 }
             }
-            .navigationTitle(Text("Gut Log").foregroundStyle(Self.accent))
+            .navigationTitle("Gut Log")
             .navigationDestination(for: WatchRoute.self) { route in
                 switch route {
                 case .symptom:
@@ -103,6 +97,21 @@ struct WatchTodayView: View {
                 }
             }
         }
+    }
+
+    /// List links on watchOS paint their labels in the system color, so these are plain buttons.
+    private func addLink(_ title: String, systemImage: String, route: WatchRoute) -> some View {
+        Button {
+            path.append(route)
+        } label: {
+            HStack(spacing: 8) {
+                Image(systemName: systemImage)
+                Text(title)
+            }
+            .foregroundStyle(Self.accent)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .buttonStyle(.plain)
     }
 
     private var dayTitle: String {
